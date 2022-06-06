@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABY Travel Agency</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand">ABY TRAVEL</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Explore</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video class="video-slide active" src="Video/1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="Video/2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="Video/3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="Video/4.mp4" autoplay muted loop></video>
+
+      <div class="content active">
+        <h1>Wonderful.<br><span>Island</span></h1>
+        <p>Every imaginable shade of blue manifests in the lagoon of Bora Bora, aka the Jewel of the South Seas. Coral motus ring the main island like a sandy sash, and, beneath the surface, dolphins, rays, sharks, turtles and colorful fish throng. Presiding over it all is the moss-green volcanic peak of Mount Otemanu where God descended to the island on a rainbow, according to local lore.
+
+            Timeless grass-skirted dancers and overwater bungalows round out the sublime scene on one of the most exotic islands.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Camping.<br><span>Enjoy</span></h1>
+        <p>Camping is all about being in away from the convenience of urban life thus it is important to plan thoroughly what to bring to your camping trip. There are many essential pieces of equipment needed for camping as well as other varied equipment that you can bring depending on the location, duration and your particular goal.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Adventures.<br><span>Off Road</span></h1>
+        <p>“Adventure begins at the end of the roads you know.” Anonymous. The greatest part of a road trip isn't about arriving at your destination. It's about all the wild and unique stuff that happens along the way.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Road Trip.<br><span>Together</span></h1>
+        <p>Road trips are the equivalent of human wings. Ask me to go on one, anywhere. We will stop in every small town and learn the history and stories, feel the ground, and capture the spirit. Then we will turn it into our own story that will live inside out history to carry with us always. Because stories are more important than things.</p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>
